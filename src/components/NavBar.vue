@@ -6,9 +6,9 @@
             <div class="sidebar">
                 <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/"><li>HOME</li></router-link> 
                 <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/about"><li>ABOUT</li></router-link> 
-                <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/"><li>PROJECTS</li></router-link> 
-                <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/"><li>TESTIMONIALS</li></router-link> 
-                <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/contact"><li>ASK ME SOMETHING</li></router-link> 
+                <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/projects"><li>PROJECTS</li></router-link> 
+                <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/testimonials"><li>TESTIMONIALS</li></router-link> 
+                <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/contact-me"><li>ASK ME SOMETHING</li></router-link> 
             </div>
         </ul>
         </div>
