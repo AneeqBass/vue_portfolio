@@ -177,8 +177,12 @@ li:hover{
   padding-left: 20px;
   list-style: none;
 }
-.sidebar a{
+.sidebar router-link{
   padding-bottom: 20px;
+}
+router-link{
+  text-decoration: none;
+  -webkit-text-fill-color: white; 
 }
 #aboutMePic{
   -webkit-filter: drop-shadow(2px 2px 0 #e21861)
@@ -273,6 +277,11 @@ max-width: 20%;
 {
 	width: 7.5px;
 	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+	border-radius: 7.5px;
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, #fd7bbc), color-stop(0.72, #fc3699), color-stop(0.86, #df0056));
 }
 #messageBox{
   height: 100%;
