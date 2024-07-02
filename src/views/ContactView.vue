@@ -51,6 +51,13 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.bgContainerCont {
+  background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/sunsetBgImg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+  background-attachment: fixed;
+  height: 100%;
+}
 </style>

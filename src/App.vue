@@ -1,12 +1,15 @@
 <template>
   <NavBarComp/>
   <router-view/>
+  <FooterComp/>
 </template>
 <script>
-import NavBarComp from './components/NavBar.vue'
+import NavBarComp from './components/NavBarComp.vue'
+import FooterComp from './components/FooterComp.vue'
 export default{
   components:{
-    NavBarComp
+    NavBarComp,
+    FooterComp
   }
 }
 </script>
@@ -64,46 +67,7 @@ export default{
 body, html {
   background-color: #0c0c0c;
 }
-.bgContainerInd {
-  background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/oasisBgImg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;  
-  background-attachment: fixed;
-  height: 100%;
-  }
-.bgContainerAb {
-  background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/loungeBgImg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;  
-  
-  background-attachment: fixed;
-}
-.bgContainerProj {
-  background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/desktopBgImg.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;  
-  background-attachment: fixed;
-  height: 100%;
-}
-.bgContainerTest {
-  background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/buildingsBgImg.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;  
-  background-attachment: fixed;
-  height: 100%;
-}
-.bgContainerCont {
-  background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/sunsetBgImg.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;  
-  background-attachment: fixed;
-  height: 100%;
-}
+
 .bgContainerAbBlur {
   background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/loungeBgImg.png");
   background-position: center;
@@ -117,11 +81,6 @@ body, html {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   height: inherit;
-}
-footer{
-  background-color: #0c0c0c;
-  border-color: transparent;
-  position: absolute;
 }
 .menuIcon{
   height: 70px;
@@ -156,13 +115,6 @@ footer{
 .menuIcon2:hover{
   background-color: rgb(246, 0, 180, 0.90) ;
 }
-.portrait{
-  padding-top: 7%;
-}
-.paddingCont{
-  padding-left: 250px;
-  padding-right: 250px;
-}
 #pageSelected{
   background-color: rgb(246, 0, 180, 0.66) ;
 }
@@ -176,13 +128,6 @@ li:hover{
   padding-bottom: 20px;
   padding-left: 20px;
   list-style: none;
-}
-.sidebar router-link{
-  padding-bottom: 20px;
-}
-router-link{
-  text-decoration: none;
-  -webkit-text-fill-color: white; 
 }
 #aboutMePic{
   -webkit-filter: drop-shadow(2px 2px 0 #e21861)
