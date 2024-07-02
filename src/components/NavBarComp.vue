@@ -18,6 +18,9 @@
 <script>
 </script>
 
-<style>
+<style scoped>
+li{
+     -webkit-text-fill-color: white; 
+}
 
 </style>

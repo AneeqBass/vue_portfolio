@@ -114,3 +114,13 @@ export default {
     },
 }
 </script>
+<style scoped>
+.bgContainerAb {
+  background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/loungeBgImg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+  
+  background-attachment: fixed;
+}
+</style>

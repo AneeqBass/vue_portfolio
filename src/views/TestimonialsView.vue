@@ -17,7 +17,7 @@
                           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 3"></button>
                         </div>
                         <div class="carousel-inner">
-                          <div v-for="testimonial in $store.state.testimonialInfo" id="contBottom" class="carousel-item active vh-100" :key="testimonial.name">
+                          <div v-for="(testimonial,index) in $store.state.testimonialInfo" id="contBottom" class="carousel-item vh-100" :key="testimonial.name" :class="{'active':index==0}">
                             <img id="testiPic" :src="testimonial.image" class="vh-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                               <h1 id="title">{{testimonial.name}}'s Testimonial</h1>
@@ -57,6 +57,13 @@ export default {
     },
 }
 </script>
-<style>
-
+<style scoped>
+.bgContainerTest {
+  background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/buildingsBgImg.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+  background-attachment: fixed;
+  height: 100%;
+}
 </style>

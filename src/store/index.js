@@ -39,5 +39,10 @@ export default createStore({
     }
   },
   modules: {
+  },
+  getters: {
+    getItemByIndex: (state) => (index) => {
+      return state.items[index];
+    }
   }
 })
