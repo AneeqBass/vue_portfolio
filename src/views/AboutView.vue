@@ -109,12 +109,12 @@ export default {
          return this.$store.dispatch('getAboutMeInfo')
         }
     },
-    mounted() {
+    mounted() {  
         this.getAboutMeInfo
     },
 }
 </script>
-<style scoped>
+<style scoped> 
 .bgContainerAb {
   background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/loungeBgImg.png");
   background-position: center;
