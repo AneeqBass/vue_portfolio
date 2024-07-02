@@ -18,7 +18,7 @@
                         </div>
                         <div class="carousel-inner">
                           <div v-for="(testimonial,index) in $store.state.testimonialInfo" id="contBottom" class="carousel-item vh-100" :key="testimonial.name" :class="{'active':index==0}">
-                            <img id="testiPic" :src="testimonial.image" class="vh-100" alt="...">
+                            <img id="testiPic" :src="testimonial.name" class="vh-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                               <h1 id="title">{{testimonial.name}}'s Testimonial</h1>
                               <p class="fs-4">{{testimonial.description}}</p>
@@ -65,5 +65,20 @@ export default {
   background-size: cover;  
   background-attachment: fixed;
   height: 100%;
+}
+#testiPic{
+  background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/aboutMePic.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 70vh;
+
+  -webkit-filter: drop-shadow(2px 2px 0 #e21861)
+                  drop-shadow(-2px -2px 0 #e21861);
+  filter: drop-shadow(2px 2px 0 #e21861) 
+          drop-shadow(-2px -2px 0 #e21861);
+  -webkit-animation: aboutGlow 1s ease-in-out infinite alternate;
+  -moz-animation: aboutGlow 1s ease-in-out infinite alternate;
+  animation: aboutGlow 1s ease-in-out infinite alternate;   
+  -webkit-filter:aboutGlow ease-in-out infinite alternate; 
 }
 </style>

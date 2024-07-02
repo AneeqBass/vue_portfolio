@@ -129,39 +129,6 @@ li:hover{
   padding-left: 20px;
   list-style: none;
 }
-#aboutMePic{
-  -webkit-filter: drop-shadow(2px 2px 0 #e21861)
-                  drop-shadow(-2px -2px 0 #e21861);
-  filter: drop-shadow(2px 2px 0 #e21861) 
-          drop-shadow(-2px -2px 0 #e21861);
-  -webkit-animation: aboutGlow 1s ease-in-out infinite alternate;
-  -moz-animation: aboutGlow 1s ease-in-out infinite alternate;
-  animation: aboutGlow 1s ease-in-out infinite alternate;   
-  -webkit-filter:aboutGlow ease-in-out infinite alternate; 
-}
-#testiPic{
-  
-  -webkit-filter: drop-shadow(2px 2px 0 #e21861)
-                  drop-shadow(-2px -2px 0 #e21861);
-  filter: drop-shadow(2px 2px 0 #e21861) 
-          drop-shadow(-2px -2px 0 #e21861);
-  -webkit-animation: aboutGlow 1s ease-in-out infinite alternate;
-  -moz-animation: aboutGlow 1s ease-in-out infinite alternate;
-  animation: aboutGlow 1s ease-in-out infinite alternate;   
-  -webkit-filter:aboutGlow ease-in-out infinite alternate; 
-}
-#aboutInfoPic{
-  height: 100%;
-  max-height: 730px; 
-  -webkit-filter: drop-shadow(2px 2px 0 #e21861)
-                  drop-shadow(-2px -2px 0 #e21861);
-  filter: drop-shadow(2px 2px 0 #e21861) 
-          drop-shadow(-2px -2px 0 #e21861);
-  -webkit-animation: aboutGlow 1s ease-in-out infinite alternate;
-  -moz-animation: aboutGlow 1s ease-in-out infinite alternate;
-  animation: aboutGlow 1s ease-in-out infinite alternate;   
-  -webkit-filter:aboutGlow ease-in-out infinite alternate; 
-}
 @keyframes aboutGlow {
   from {
     -webkit-filter:drop-shadow(0 0 0 #fff, 0 0 5px #fff, 0 0 10px #df0056, 0 0 15px #df0056, 0 0 20px #df0056, 0 0 25px #df0056, 0 0 30px #e60073); 
