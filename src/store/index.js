@@ -23,7 +23,7 @@ export default createStore({
     },
      setTestimonialInfo(state, payload){
        state.testimonialInfo = payload
-    }
+    } 
   },
   actions: {
     async getAboutMeInfo ({commit}){
