@@ -6,7 +6,9 @@ export default createStore({
     talentsHobbies:null,
     programmingSkills:null,
     projects:null,
-    testimonialInfo:null
+    testimonialInfo:null,
+    workExperienceInfo:null,
+    educationInfo:null,
   },
   mutations: {
     setAboutMeInfo(state,payload){
@@ -23,19 +25,27 @@ export default createStore({
     },
      setTestimonialInfo(state, payload){
        state.testimonialInfo = payload
-    }
+    },
+     setWorkExperienceInfo(state, payload){
+       state.workExperienceInfo = payload
+    },
+     setEducationInfo(state, payload){
+       state.educationInfo = payload
+    } 
   },
   actions: {
     async getAboutMeInfo ({commit}){
       let fetchInfo = await fetch('https://aneeqbass.github.io/vuePortfolioAPI/data/data.json')
       let data = await fetchInfo.json()
-      let {aboutMeInfo,projects,programmingSkills,talentsHobbies,testimonialInfo} = data
+      let {aboutMeInfo,projects,programmingSkills,talentsHobbies,testimonialInfo,workExperienceInfo,educationInfo} = data
       console.log(data);
       commit('setAboutMeInfo', aboutMeInfo)
       commit('setProgrammingSkills', programmingSkills)
       commit('setTalentsHobbies', talentsHobbies)
       commit('setProjects', projects)
       commit('setTestimonialInfo', testimonialInfo)
+      commit('setWorkExperienceInfo', workExperienceInfo)
+      commit('setEducationInfo', educationInfo)
     }
   },
   modules: {

@@ -1,28 +1,16 @@
 <template>
   <div class="bgContainerAb">
-    <img
-      class="menuIcon fixed-top"
-      src="https://aneeqbass.github.io/hostedImages_portfolio/images/menuIcon.png"
-      alt="menuIcon"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#demo"
-    />
+    <img class="menuIcon fixed-top" src="https://aneeqbass.github.io/hostedImages_portfolio/images/menuIcon.png"
+      alt="menuIcon" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo" />
 
     <div id="carouselExample" class="carousel slide vw-75 min-vw-75 min-vh-100">
       <div class="carousel-inner">
         <div class="carousel-item margCenter">
-          <div
-            class="card mb-3 bg-transparent cardWidth m-auto with-blur-backdrop"
-          >
-              <div v-if="aboutMeInfo">
-            <div class="row g-0">
-                <div class="col-md-4 text-center">
-                  <img id="aboutInfoPic"
-                    :src="aboutMeInfo.image"
-                    class="rounded-start"
-                    alt="..."
-                  />
+          <div class="card mb-3 bg-transparent cardWidth m-auto with-blur-backdrop">
+            <div v-if="aboutMeInfo">
+              <div class="row g-0">
+                <div id="aboutMeInfo" class="col-md-4 text-center">
+                  <img id="aboutInfoPic" :src="aboutMeInfo.image" class="rounded-start" alt="..." />
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -32,131 +20,44 @@
                 </div>
               </div>
             </div>
-              <div v-else>
-                <!-- Optional: loading indicator or placeholder content -->
-                <p>Loading...</p>
-              </div>
+            <div v-else>
+              <!-- Optional: loading indicator or placeholder content -->
+              <p>Loading...</p>
+            </div>
           </div>
         </div>
         <div id="aboutFront" class="carousel-item m-auto active">
           <div class="container text-center">
             <div class="row vw-75 vh-100 min-vw-75 min-vh-100">
               <div class="col m-auto">
-                <a
-                  ><h1
-                    id="titleAlt"
-                    type="button"
-                    data-bs-target="#carouselExample"
-                    data-bs-slide="prev"
-                  >
+                <a>
+                  <h1 id="titleAlt" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                     About Me
-                  </h1></a
-                >
+                  </h1>
+                </a>
               </div>
               <div class="col m-auto">
-                <a
-                  ><h1
-                    id="titleAlt"
-                    type="button"
-                    data-bs-target="#carouselExample"
-                    data-bs-slide="next"
-                  >
-                    Skills and Talents
-                  </h1></a
-                >
+                <a>
+                  <h1 id="titleAlt" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    Talents and Hobbies
+                  </h1>
+                </a>
               </div>
             </div>
           </div>
         </div>
         <div class="carousel-item m-auto pt-5 text-center">
-          <h1 id="title">Skills and Talents</h1>
-
-          <div class="accordion accordion-flush accMarg" id="accordionExample">
-            <div
-              class="accordion-item bg-transparent with-blur-backdrop border-2"
-            >
-              <h2 class="accordion-header">
-                <button
-                  id="accordHeading"
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  Programming skills
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse show"
-                data-bs-parent="#accordionExample"
-              >
+          <div id="talentsInfo">
+          <h1 id="title" class="text-center">Talents and Hobbies</h1>
+          <div class="accordion accordion-flush" id="accordionExample">
+            <div class="accordion-item bg-transparent with-blur-backdrop border-2 accMarg">
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <div class="card-group card-group-scroll m-auto">
-                    <div
-                      v-for="skill in $store.state.programmingSkills"
-                      id="cardBlockWidth"
-                      class="card bg-transparent with-blur-backdrop border border-0"
-                      :key="skill.name"
-                    >
+                    <div v-for="talent in $store.state.talentsHobbies" id="cardBlockWidth"
+                      class="card bg-transparent with-blur-backdrop border border-0" :key="talent.name">
                       <div class="container-fluid">
-                        <img
-                          id="imgSize"
-                          :src="skill.imageUrl"
-                          class="img-fluid"
-                          alt="image"
-                        />
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">{{ skill.name }}</h5>
-                        <p class="card-text">
-                          {{ skill.description }}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="accordion-item bg-transparent with-blur-backdrop border-2"
-            >
-              <h2 class="accordion-header">
-                <button
-                  id="accordHeading"
-                  class="accordion-button collapsed bg-darkb g-gradient"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-                  Talents and Hobbies
-                </button>
-              </h2>
-              <div
-                id="collapseTwo"
-                class="accordion-collapse collapse"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  <h1 id="title" class="text-center">Talents and Hobbies</h1>
-                  <div class="card-group card-group-scroll m-auto cardWidth">
-                    <div
-                      v-for="talent in $store.state.talentsHobbies"
-                      id="cardBlockWidth"
-                      class="card bg-transparent with-blur-backdrop border border-0"
-                      :key="talent.name"
-                    >
-                      <div class="container-fluid">
-                        <img
-                          id="imgSize"
-                          :src="talent.imageUrl"
-                          class="img-fluid"
-                          alt="skill"
-                        />
+                        <img id="imgSize" :src="talent.imageUrl" class="img-fluid" alt="image" />
                       </div>
                       <div class="card-body">
                         <h5 class="card-title">{{ talent.name }}</h5>
@@ -170,24 +71,18 @@
               </div>
             </div>
           </div>
-          <br />
+                  
+          </div>
+          <br/>
         </div>
       </div>
-      <button
-        class="carousel-control-prev position-fixed"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="prev"
-      >
+      <button class="carousel-control-prev position-fixed" type="button" data-bs-target="#carouselExample"
+        data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button
-        class="carousel-control-next position-fixed"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="next"
-      >
+      <button class="carousel-control-next position-fixed" type="button" data-bs-target="#carouselExample"
+        data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -220,40 +115,67 @@ export default {
 
   background-attachment: fixed;
 }
+
 #aboutInfoPic {
   width: 100%;
   height: auto;
   max-width: 300px;
-  -webkit-filter: drop-shadow(2px 2px 0 #e21861)
-    drop-shadow(-2px -2px 0 #e21861);
+  -webkit-filter: drop-shadow(2px 2px 0 #e21861) drop-shadow(-2px -2px 0 #e21861);
   filter: drop-shadow(2px 2px 0 #e21861) drop-shadow(-2px -2px 0 #e21861);
   -webkit-animation: aboutGlow 1s ease-in-out infinite alternate;
   -moz-animation: aboutGlow 1s ease-in-out infinite alternate;
   animation: aboutGlow 1s ease-in-out infinite alternate;
   -webkit-filter: aboutGlow ease-in-out infinite alternate;
 }
+
 #aboutFront {
   background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/aboutMePic.png");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 70vh;
-
   background-attachment: fixed;
-  -webkit-filter: drop-shadow(2px 2px 0 #e21861)
-    drop-shadow(-2px -2px 0 #e21861);
+  -webkit-filter: drop-shadow(2px 2px 0 #e21861) drop-shadow(-2px -2px 0 #e21861);
   filter: drop-shadow(2px 2px 0 #e21861) drop-shadow(-2px -2px 0 #e21861);
   -webkit-animation: aboutGlow 1s ease-in-out infinite alternate;
   -moz-animation: aboutGlow 1s ease-in-out infinite alternate;
   animation: aboutGlow 1s ease-in-out infinite alternate;
   -webkit-filter: aboutGlow ease-in-out infinite alternate;
 }
-.hidden {
-  display: none;
+#imgSize {
+  width: 150px;
+  -webkit-filter: drop-shadow(2px 2px 0 #e21861) drop-shadow(-2px -2px 0 #e21861);
+  filter: drop-shadow(2px 2px 0 #e21861) drop-shadow(-2px -2px 0 #e21861);
+  -webkit-animation: aboutGlow 1s ease-in-out infinite alternate;
+  -moz-animation: aboutGlow 1s ease-in-out infinite alternate;
+  animation: aboutGlow 1s ease-in-out infinite alternate;
+  -webkit-filter: aboutGlow ease-in-out infinite alternate;
+}
+.margCenter {
+  padding: 5%;
 }
 
-@media (max-width: 767px) {
-  .card-body{
-  text-align: center;
-  } 
+.accMarg {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.cardWidth {
+  width: 90%;
+}
+
+@media (max-width: 767px){
+  .card-body {
+    text-align: center;
+  }
+}
+@media (max-width: 891px){
+  #aboutMeInfo{
+    padding-top: 70px;
+  }
+}
+@media (max-width: 402px){
+  #talentsInfo{
+    padding-top: 35px;
+  }
 }
 </style>
