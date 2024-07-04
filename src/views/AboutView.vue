@@ -39,7 +39,7 @@
               <div class="col m-auto">
                 <a>
                   <h1 id="titleAlt" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    Goals
+                    Talents and Hobbies
                   </h1>
                 </a>
               </div>
@@ -47,22 +47,31 @@
           </div>
         </div>
         <div class="carousel-item m-auto pt-5 text-center">
-          <div id="goalsInfo">
-          <h1 id="title" class="text-center">Goals</h1>
-                  <div class="card-group card-group-scroll m-auto accMarg">
-                    <div v-for="skill in $store.state.programmingSkills" id="cardBlockWidth"
-                      class="card bg-transparent with-blur-backdrop border border-0" :key="skill.name">
+          <div id="talentsInfo">
+          <h1 id="title" class="text-center">Talents and Hobbies</h1>
+          <div class="accordion accordion-flush" id="accordionExample">
+            <div class="accordion-item bg-transparent with-blur-backdrop border-2 accMarg">
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="card-group card-group-scroll m-auto">
+                    <div v-for="talent in $store.state.talentsHobbies" id="cardBlockWidth"
+                      class="card bg-transparent with-blur-backdrop border border-0" :key="talent.name">
                       <div class="container-fluid">
-                        <img id="imgSize" :src="skill.imageUrl" class="img-fluid" alt="image" />
+                        <img id="imgSize" :src="talent.imageUrl" class="img-fluid" alt="image" />
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title">{{ skill.name }}</h5>
+                        <h5 class="card-title">{{ talent.name }}</h5>
                         <p class="card-text">
-                          {{ skill.description }}
+                          {{ talent.description }}
                         </p>
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+                  
           </div>
           <br/>
         </div>
@@ -165,7 +174,7 @@ export default {
   }
 }
 @media (max-width: 402px){
-  #goalsInfo{
+  #talentsInfo{
     padding-top: 35px;
   }
 }
