@@ -4,6 +4,8 @@
       <div class="accordion" id="accordionExample">
         <img class="menuIcon fixed-top" src="https://aneeqbass.github.io/hostedImages_portfolio/images/menuIcon.png"
           alt="menuIcon" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+          
+          <h1 id="title" class="text-center">Projects</h1>
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
@@ -13,9 +15,9 @@
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <h1 id="title" class="text-center">Projects</h1>
+                <div v-if ="$store.state.aboutMeInfo">
               <div class="row row-cols-auto justify-content-evenly pt-3">
-                <div v-for="project in $store.state.projects" id="cardBlockWidth"
+                  <div v-for="project in $store.state.projects" id="cardBlockWidth"
                       class="card bg-transparent with-blur-backdrop border" :key="project.name">
                       <div class="container-fluid">
                         <img id="imgSize" :src="project.image" class="img-fluid" alt="image" />
@@ -23,46 +25,19 @@
                       <div class="card-body">
                         <h5 class="card-title">{{ project.name }}</h5>
                       </div>
-                    </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Personal Projects
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <h1 id="title" class="text-center">Personal Projects</h1>
-              <div class="row row-cols-3">
-                <div class="col">
-                  <div class="card mb-3">
-                    <img src="" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                    </div>
+                      <div class="justify-content-evenly pb-3">
+                      <p class="card-text custom-text">{{ project.description }}</p>
+                        <div class="justify-content-evenly row">
+                          <a class="linkBtn btn col mx-2" :href="project.github" target="_blank" role="button">GitHub</a>
+                          <a class="linkBtn btn col mx-2" :href="project.varcel" target="_blank" role="button">Website</a>
+                        </div>
+                      </div>
                   </div>
                 </div>
-                <div class="col">
-                  <div class="card mb-3">
-                    <img src="" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                    </div>
-                  </div>
-                </div>
-
               </div>
+                <div v-else>
+                   <Spinner/>
+                </div>
             </div>
           </div>
         </div>
@@ -74,22 +49,27 @@
 </template>
 
 <script>
+import Spinner from '@/components/SpinnerComp.vue';
+
 export default {
   computed: {
-    getAboutMeInfo() {
-      return this.$store.dispatch('getAboutMeInfo')
-    }
-  },
-  mounted() {
-    this.getAboutMeInfo
-  },
-}
+    aboutMeInfo() {
+      return this.$store.state.aboutMeInfo;
+    },
+  },components: {
+    Spinner
+  }
+};
 </script>
 
 <style scoped>
 .card{
   width: 250px;
   padding-top: 20px;
+}
+a{
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke: 1px #060018;
 }
 .container{
   padding-top: 35px;
@@ -104,5 +84,8 @@ export default {
 }
 #imgSize {
   width: 100%;
+}
+.linkBtn{
+    background-color: rgb(246, 0, 180, 0.90);
 }
 </style>

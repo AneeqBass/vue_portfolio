@@ -35,19 +35,24 @@ export default createStore({
   },
   actions: {
     async getAboutMeInfo ({commit}){
-      let fetchInfo = await fetch('https://aneeqbass.github.io/vuePortfolioAPI/data/data.json')
-      let data = await fetchInfo.json()
-      let {aboutMeInfo,projects,programmingSkills,talentsHobbies,testimonialInfo,workExperienceInfo,educationInfo} = data
-      console.log(data);
-      commit('setAboutMeInfo', aboutMeInfo)
-      commit('setProgrammingSkills', programmingSkills)
-      commit('setTalentsHobbies', talentsHobbies)
-      commit('setProjects', projects)
-      commit('setTestimonialInfo', testimonialInfo)
-      commit('setWorkExperienceInfo', workExperienceInfo)
-      commit('setEducationInfo', educationInfo)
-    }
+      try {
+        let fetchInfo = await fetch('https://aneeqbass.github.io/vuePortfolioAPI/data/data.json')
+        let data = await fetchInfo.json()
+        let {aboutMeInfo,projects,programmingSkills,talentsHobbies,testimonialInfo,workExperienceInfo,educationInfo} = data
+        console.log(data);
+        commit('setAboutMeInfo', aboutMeInfo)
+        commit('setProgrammingSkills', programmingSkills)
+        commit('setTalentsHobbies', talentsHobbies)
+        commit('setProjects', projects)
+        commit('setTestimonialInfo', testimonialInfo)
+        commit('setWorkExperienceInfo', workExperienceInfo)
+        commit('setEducationInfo', educationInfo)
+      }
+       catch (error) {
+        console.log(error)
+      }
   },
+},
   modules: {
   }
 })

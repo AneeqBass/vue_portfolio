@@ -1,27 +1,47 @@
 <template>
   <NavBarComp />
+  <div v-if ="!$store.state.aboutMeInfo">
+  <Spinner />
+  </div>
   <router-view />
   <FooterComp />
 </template>
 <script>
+import Spinner from '@/components/SpinnerComp.vue';
 import NavBarComp from './components/NavBarComp.vue'
 import FooterComp from './components/FooterComp.vue'
 export default {
   components: {
     NavBarComp,
-    FooterComp
+    FooterComp,
+    Spinner
+  },created() {
+    if (!this.aboutMeInfo) {
+      this.$store.dispatch("getAboutMeInfo");
+    }
+  },
+  mounted() {
+    this.getAboutMeInfo;
+  },
+  data() {
+    return {
+      loading: false
+    };
   }
 }
 </script>
 <style>
 @import url('https://fonts.cdnfonts.com/css/commando?styles=7971');
 
+
 #app {
   font-family: 'Commando', sans-serif;
   -webkit-text-fill-color: white;
   -webkit-text-stroke: 1px #060018;
 }
-
+#contactLink{
+     height: 20px;
+ }
 #title {
   -webkit-text-fill-color: white;
   -webkit-text-stroke: 2px #060018;
@@ -170,5 +190,8 @@ html {
 
 #accordHeading {
   background-color: #f1e9e9;
+}
+.router-link{
+  -webkit-text-stroke: white;
 }
 </style>

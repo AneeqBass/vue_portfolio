@@ -7,7 +7,7 @@
       <div class="carousel-inner">
         <div class="carousel-item margCenter">
           <div class="card mb-3 bg-transparent cardWidth m-auto with-blur-backdrop">
-            <div v-if="aboutMeInfo">
+            <div v-if ="$store.state.aboutMeInfo">
               <div class="row g-0">
                 <div id="aboutMeInfo" class="col-md-4 text-center">
                   <img id="aboutInfoPic" :src="aboutMeInfo.image" class="rounded-start" alt="..." />
@@ -21,8 +21,7 @@
               </div>
             </div>
             <div v-else>
-              <!-- Optional: loading indicator or placeholder content -->
-              <p>Loading...</p>
+              <p><Spinner/></p>
             </div>
           </div>
         </div>
@@ -49,9 +48,10 @@
         <div class="carousel-item m-auto pt-5 text-center">
           <div id="talentsInfo">
           <h1 id="title" class="text-center">Talents and Hobbies</h1>
-          <div class="accordion accordion-flush" id="accordionExample">
-            <div class="accordion-item bg-transparent with-blur-backdrop border-2 accMarg">
-              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div v-if ="$store.state.aboutMeInfo">
+            <div class="accordion accordion-flush " id="accordionExample">
+            <div class="accordion-item bg-transparent with-blur-backdrop border-2 accMarg ">
+              <div id="collapseOne" class="accordion-collapse collapse show " data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <div class="card-group card-group-scroll m-auto">
                     <div v-for="talent in $store.state.talentsHobbies" id="cardBlockWidth"
@@ -71,7 +71,10 @@
               </div>
             </div>
           </div>
-                  
+          </div>  
+          <div v-else>
+              <Spinner/>
+            </div>   
           </div>
           <br/>
         </div>
@@ -90,20 +93,16 @@
   </div>
 </template>
 <script>
+import Spinner from '@/components/SpinnerComp.vue';
+
 export default {
   computed: {
     aboutMeInfo() {
       return this.$store.state.aboutMeInfo;
     },
-  },
-  created() {
-    if (!this.aboutMeInfo) {
-      this.$store.dispatch("getAboutMeInfo");
-    }
-  },
-  mounted() {
-    this.getAboutMeInfo;
-  },
+  },components: {
+    Spinner
+  }
 };
 </script>
 <style scoped>
@@ -133,7 +132,6 @@ export default {
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 70vh;
-  background-attachment: fixed;
   -webkit-filter: drop-shadow(2px 2px 0 #e21861) drop-shadow(-2px -2px 0 #e21861);
   filter: drop-shadow(2px 2px 0 #e21861) drop-shadow(-2px -2px 0 #e21861);
   -webkit-animation: aboutGlow 1s ease-in-out infinite alternate;

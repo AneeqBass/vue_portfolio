@@ -1,11 +1,12 @@
 <template>
-  <div class="bgContainerProj lazy min-vh-100 pt-5">
+  <div class="bgContainerRes lazy min-vh-100 pt-5">
     <div class="container text-center">
         <img class="menuIcon fixed-top" src="https://aneeqbass.github.io/hostedImages_portfolio/images/menuIcon.png"
           alt="menuIcon" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
           <div id="resumeInfo">
           <h1 id="title">Skills</h1>
-          <div class="accordion accordion-flush" id="accordionExample">
+          <div v-if ="$store.state.aboutMeInfo">
+            <div class="accordion accordion-flush" id="accordionExample">
             <div class="accordion-item bg-transparent with-blur-backdrop border-2">
               <h2 class="accordion-header">
                 <button id="accordHeading" class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -33,8 +34,14 @@
               </div>
             </div>
           </div>
+          </div>
+          <div v-else>
+            <Spinner :visible="loading" />
+            <p>Loading...</p>
+          </div>
           <br>
           <h1 id="title">Education</h1>
+          <div v-if ="$store.state.aboutMeInfo">  
           <div class="accordion accordion-flush" id="accordionExample2">
             <div class="accordion-item bg-transparent with-blur-backdrop border-2">
               <h2 class="accordion-header">
@@ -66,8 +73,14 @@
               </div>
             </div>
           </div>
+          </div>
+          <div v-else>
+            <Spinner :visible="loading" />
+            <p>Loading...</p>
+          </div>
           <br>
           <h1 id="title">Work Experience</h1>
+          <div v-if ="$store.state.aboutMeInfo">
           <div class="accordion accordion-flush" id="accordionExample3">
             <div class="accordion-item bg-transparent with-blur-backdrop border-2">
               <h2 class="accordion-header">
@@ -100,6 +113,10 @@
             </div>
           </div>
           </div>
+          <div v-else>
+            <Spinner/>
+          </div>
+          </div>
     </div>
     <br>
   </div>
@@ -107,21 +124,22 @@
 </template>
 
 <script>
+import Spinner from '@/components/SpinnerComp.vue';
+
 export default {
   computed: {
-    getAboutMeInfo() {
-      return this.$store.dispatch('getAboutMeInfo')
-    }
-  },
-  mounted() {
-    this.getAboutMeInfo
-  },
-}
+    aboutMeInfo() {
+      return this.$store.state.aboutMeInfo;
+    },
+  },components: {
+    Spinner
+  }
+};
 </script>
 
 <style scoped>
-.bgContainerProj {
-  background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/desktopBgImg.jpg");
+.bgContainerRes {
+  background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/resumeBg.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
