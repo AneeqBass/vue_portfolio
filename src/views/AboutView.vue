@@ -30,14 +30,14 @@
             <div class="row vw-75 vh-100 min-vw-75 min-vh-100">
               <div class="col m-auto">
                 <a>
-                  <h1 id="titleAlt" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <h1 id="title" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                     About Me
                   </h1>
                 </a>
               </div>
               <div class="col m-auto">
                 <a>
-                  <h1 id="titleAlt" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <h1 id="title" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
                     Talents and Hobbies
                   </h1>
                 </a>
