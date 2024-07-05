@@ -3,7 +3,7 @@
         <div class="offcanvas-body">
             <img class="menuIcon2" src="https://aneeqbass.github.io/hostedImages_portfolio/images/menuIcon.png" alt="menuIcon" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
         <ul class="list-group list-group-flush mt-3 fs-3 ms-2">
-            <div class="sidebar">
+            <div class="sidebar router-link">
                 <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/" active-class="active-link"><li>HOME</li></router-link> 
                 <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/about" active-class="active-link"><li>ABOUT</li></router-link> 
                 <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/resume" active-class="active-link"><li>RESUME</li></router-link> 
@@ -36,7 +36,6 @@ li:hover {
 }
 
 .sidebar li {
-  padding-bottom: 20px;
   padding-left: 20px;
   list-style: none;
 }

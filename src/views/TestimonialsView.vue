@@ -18,7 +18,8 @@
             aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-          <div v-for="(testimonial, index) in $store.state.testimonialInfo" class="carousel-item vh-100"
+          <div v-if ="$store.state.aboutMeInfo">
+            <div v-for="(testimonial, index) in $store.state.testimonialInfo" class="carousel-item vh-100"
             :key="testimonial.name" :class="{ active: index == 0 }">
             <div class="container">
               <div id="testiPic" :style="{ backgroundImage: 'url(' + testimonial.image + ')' }" class="mx-auto vh-100">
@@ -30,6 +31,10 @@
                 {{ testimonial.description }}
               </p>
             </div>
+          </div>
+          </div>
+          <div v-else>
+            <Spinner/>
           </div>
         </div>
         <button class="carousel-control-prev position-fixed" type="button" data-bs-target="#carouselExampleCaptions"
@@ -48,17 +53,19 @@
 </template>
 
 <script>
+import Spinner from '@/components/SpinnerComp.vue';
+
 export default {
   computed: {
-    getAboutMeInfo() {
-      return this.$store.dispatch("getAboutMeInfo");
+    aboutMeInfo() {
+      return this.$store.state.aboutMeInfo;
     },
-  },
-  mounted() {
-    this.getAboutMeInfo;
-  },
+  },components: {
+    Spinner
+  }
 };
 </script>
+
 <style scoped>
 .bgContainerTest {
   background-image: url("https://aneeqbass.github.io/hostedImages_portfolio/images/buildingsBgImg.jpeg");
