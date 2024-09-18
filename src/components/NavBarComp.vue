@@ -6,9 +6,9 @@
             <div class="sidebar router-link">
                 <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/" active-class="active-link"><li>HOME</li></router-link> 
                 <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/about" active-class="active-link"><li>ABOUT</li></router-link> 
-                <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/resume" active-class="active-link"><li>RESUME</li></router-link> 
+                <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/education&experience" active-class="active-link"><li>Education and Experience</li></router-link> 
                 <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/projects" active-class="active-link"><li>PROJECTS</li></router-link> 
-                <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/testimonials" active-class="active-link"><li>TESTIMONIALS</li></router-link> 
+                <!-- <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/testimonials" active-class="active-link"><li>TESTIMONIALS</li></router-link>  -->
                 <router-link class="link-offset-2 link-underline link-underline-opacity-0" to="/contact-me" active-class="active-link"><li>ASK ME SOMETHING</li></router-link> 
             </div>
         </ul>
@@ -40,4 +40,7 @@ li:hover {
   list-style: none;
 }
 
+ul{
+  -webkit-text-stroke: 1px #060018;
+}
 </style>

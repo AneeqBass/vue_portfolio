@@ -47,7 +47,7 @@ export default createStore({
         commit('setTestimonialInfo', testimonialInfo)
         commit('setWorkExperienceInfo', workExperienceInfo)
         commit('setEducationInfo', educationInfo)
-      }
+      } 
        catch (error) {
         console.log(error)
       }
